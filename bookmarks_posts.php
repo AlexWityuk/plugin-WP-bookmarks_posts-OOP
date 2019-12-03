@@ -62,8 +62,7 @@ class Bookmarksposts {
 	// Add metabox to the post (optional)
 
 	public function add_Bookmark_no_field ($post) {
-		wp_nonce_field( basename(__FILE__), 'bookmark_mam_nonce' );
-		$bookmark = maybe_unserialize( get_post_meta( $post->ID, 'bookkmark_meta', true ) );
+		$bookmark = get_post_meta( $post->ID, 'bookkmark_meta', true );
 		?>
 		<p><?php echo $bookmark; ?></p>
 		<?php
